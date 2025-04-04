@@ -7,8 +7,16 @@ Authors@R:
     person("Emma", "Wolfe", , "first.last@example.com", role = c("aut", "cre"))
     person("Maxine", "Paredes", , "first.last@example.com", role = c("aut", "cre"))
 Description: Runs a simple linear regression analysis designed to predict the age of 
-abalones based on their physical characteristics.
+    abalones based on their physical characteristics.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Imports: 
+    parsnip,
+    readr,
+    recipes,
+    workflows
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
