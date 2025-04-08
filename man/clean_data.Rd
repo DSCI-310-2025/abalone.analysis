@@ -23,5 +23,14 @@ removing the old target variable (rings)
 and removing an unnecessary categorical variable (sex).
 }
 \examples{
-clean_data(data_frame = abalone_data)
+x <- data.frame(length = c(1:10),
+                diameter = c(1:10),
+                height = c(1:10),
+                whole_weight = c(1:10),
+                shucked_weight = c(1:10),
+                viscera_weight = c(1:10),
+                shell_weight = c(1:10),
+                sex = c("M", "F", "M", "F","M", "F","M", "F", "M", "F"),
+                rings = c(1:10))
+clean_data(data_frame = x)
 }

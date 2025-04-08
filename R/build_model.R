@@ -10,7 +10,11 @@
 #' @export
 #'
 #' @examples
-#' build_model(func = age ~ diameter + height + shell_weight, training = abalone_training)
+#' x <- data.frame(age = c(1:10),
+#'                 diameter = c(1:10),
+#'                 height = c(1:10),
+#'                 shell_weight = c(1:10))
+#' build_model(func = age ~ diameter + height + shell_weight, training = x)
 build_model <- function(func = "function for the model to analyze", training = "training data for the model") {
   spec <- parsnip::linear_reg() |>
     parsnip::set_engine("lm") |>

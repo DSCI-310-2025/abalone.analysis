@@ -18,6 +18,7 @@ Imports:
     readr,
     recipes,
     rsample,
+    tidyr,
     workflows
 Suggests: 
     testthat (>= 3.0.0)

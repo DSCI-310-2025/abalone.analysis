@@ -22,5 +22,9 @@ Creates a linear regression model using the training data, based on the diameter
 height, and shell weight of the abalone. Returns a fitted linear regression model
 }
 \examples{
-build_model(func = age ~ diameter + height + shell_weight, training = abalone_training)
+x <- data.frame(age = c(1:10),
+                diameter = c(1:10),
+                height = c(1:10),
+                shell_weight = c(1:10))
+build_model(func = age ~ diameter + height + shell_weight, training = x)
 }

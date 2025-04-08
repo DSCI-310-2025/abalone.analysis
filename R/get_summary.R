@@ -25,13 +25,19 @@
 #' @export
 #'
 #' @examples
-#' get_summary(abalone_train)
+#' x <- data.frame(variable = c("age", "diameter", "height", "shell_weight"),
+#'                         mean = c(12.5, 0.65, 0.065, 0.25),
+#'                         median = c(12.5, 0.65, 0.065,  0.25),
+#'                         variance = c(41.7, 0.0167, 0.0002, 0.0167),
+#'                         minimum = c(5, 0.5, 0.05,  0.1),
+#'                         maximum = c(20, 0.8, 0.08,  0.4))
+#' get_summary(x)
 
 
 get_summary <- function(dataset = "the dataset to clean") {
   # Check if the data frame is empty
   if (nrow(dataset) == 0) {
-    return(tibble(
+    return(tibble::tibble(
       variable = character(0),
       mean = numeric(0),
       median = numeric(0),
@@ -42,7 +48,7 @@ get_summary <- function(dataset = "the dataset to clean") {
   }
 
   # Select only numeric columns
-  numeric_cols <- dataset %>% select(where(is.numeric))
+  numeric_cols <- dataset |> dplyr::select(where(is.numeric))
 
   # Check if there are no numeric columns
   if (ncol(numeric_cols) == 0) {
@@ -50,10 +56,10 @@ get_summary <- function(dataset = "the dataset to clean") {
   }
 
   # Calculate summary statistics
-  numeric_cols %>%
-    pivot_longer(cols = everything(), names_to = "variable", values_to = "values") %>%
-    group_by(variable) %>%
-    reframe(
+  numeric_cols |>
+    tidyr::pivot_longer(cols = dplyr::everything(), names_to = "variable", values_to = "values") |>
+    dplyr::group_by(variable) |>
+    dplyr::summarize(
       mean = round(mean(values, na.rm = TRUE), 4),
       median = round(median(values, na.rm = TRUE), 4),
       variance = round(var(values, na.rm = TRUE), 4),

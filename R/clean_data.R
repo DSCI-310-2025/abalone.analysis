@@ -10,7 +10,16 @@
 #' @export
 #'
 #' @examples
-#' clean_data(data_frame = abalone_data)
+#' x <- data.frame(length = c(1:10),
+#'                 diameter = c(1:10),
+#'                 height = c(1:10),
+#'                 whole_weight = c(1:10),
+#'                 shucked_weight = c(1:10),
+#'                 viscera_weight = c(1:10),
+#'                 shell_weight = c(1:10),
+#'                 sex = c("M", "F", "M", "F","M", "F","M", "F", "M", "F"),
+#'                 rings = c(1:10))
+#' clean_data(data_frame = x)
 
 clean_data <- function(data_frame = "the dataframe to be cleaned") {
 
@@ -39,8 +48,20 @@ clean_data <- function(data_frame = "the dataframe to be cleaned") {
 #' @param clean_data clean data that is ready to be split into training and testing (used clean_data)
 #'
 #' @return assigned training and testing sets to variables, returned as a list
+#' @export
+#'
+#' @examples
+#' x <- data.frame(length = c(1:100),
+#'                 diameter = c(1:100),
+#'                 height = c(1:100),
+#'                 whole_weight = c(1:100),
+#'                 shucked_weight = c(1:100),
+#'                 viscera_weight = c(1:100),
+#'                 shell_weight = c(1:100),
+#'                 age = sample(1:20, 100, replace = TRUE))
+#' split_data(x)
 
-split_data <- function(clean_data) {
+split_data <- function(clean_data = "data that has already been passed through the `clean_data` function") {
 
   # splits data into training and testing set
 

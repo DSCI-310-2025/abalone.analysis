@@ -33,5 +33,11 @@ in a given dataset that has been reshaped from a wide format to a long
 format
 }
 \examples{
-get_summary(abalone_train)
+x <- data.frame(variable = c("age", "diameter", "height", "shell_weight"),
+                        mean = c(12.5, 0.65, 0.065, 0.25),
+                        median = c(12.5, 0.65, 0.065,  0.25),
+                        variance = c(41.7, 0.0167, 0.0002, 0.0167),
+                        minimum = c(5, 0.5, 0.05,  0.1),
+                        maximum = c(20, 0.8, 0.08,  0.4))
+get_summary(x)
 }
