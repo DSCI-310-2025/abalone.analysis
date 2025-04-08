@@ -18,14 +18,14 @@ clean_data <- function(data_frame = "the dataframe to be cleaned") {
 
   abalone_data <- data_frame |>
     dplyr::mutate(
-      length = length * 200, # Reversing the scaling for readability purposes
-      diameter = diameter * 200,
-      height = height * 200,
-      whole_weight = whole_weight * 200,
-      shucked_weight = shucked_weight * 200,
-      viscera_weight = viscera_weight * 200,
-      shell_weight = shell_weight * 200,
-      age = rings + 1.5 #  adding the age variable
+      length = data_frame$length * 200, # Reversing the scaling for readability purposes
+      diameter = data_frame$diameter * 200,
+      height = data_frame$height * 200,
+      whole_weight = data_frame$whole_weight * 200,
+      shucked_weight = data_frame$shucked_weight * 200,
+      viscera_weight = data_frame$viscera_weight * 200,
+      shell_weight = data_frame$shell_weight * 200,
+      age = data_frame$rings + 1.5 #  adding the age variable
     ) |>
     # Clean data - removing old target variable and removing unecessary categorical sex variable
     dplyr::select(-sex, -rings)
@@ -36,7 +36,7 @@ clean_data <- function(data_frame = "the dataframe to be cleaned") {
 
 #' Creates the training and testing sets with a 70/30 train/test split using age for stratification.
 #'
-#' @param data_frame clean data that is ready to be split into training and testing (used clean_data)
+#' @param clean_data clean data that is ready to be split into training and testing (used clean_data)
 #'
 #' @return assigned training and testing sets to variables, returned as a list
 

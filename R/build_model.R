@@ -11,8 +11,7 @@
 #'
 #' @examples
 #' build_model(func = age ~ diameter + height + shell_weight, training = abalone_training)
-build_model <- function(func = "function for the model to analyze",
-                        training = "training data for the model") {
+build_model <- function(func = "function for the model to analyze", training = "training data for the model") {
   spec <- parsnip::linear_reg() |>
     parsnip::set_engine("lm") |>
     parsnip::set_mode("regression")
