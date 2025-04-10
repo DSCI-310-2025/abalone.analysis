@@ -20,10 +20,12 @@ build_model <- function(func = "function for the model to analyze", training = "
     parsnip::set_engine("lm") |>
     parsnip::set_mode("regression")
 
-  recipe <- recipes::recipe(func, data = training)
+  stopifnot(grepl("~", as.character(c(func))))
+
+  model_recipe <- recipes::recipe(func, data = training)
 
   modelfit <- workflows::workflow() |>
-    workflows::add_recipe(recipe) |>
+    workflows::add_recipe(model_recipe) |>
     workflows::add_model(spec) |>
     parsnip::fit(data = training)
 

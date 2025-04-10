@@ -16,3 +16,9 @@ test_that("`build_model` produces a `list` object with a length of 4 as the outp
   expect_length(build_model(func = age ~ diameter + height + shell_weight,
                             training = training_data_correct_format), 4)
 })
+
+test_that("`build_model` produces an error when the `func` argument is
+          in the wrong format", {
+            expect_error(build_model(func = age + diameter + height + shell_weight,
+                                     training = training_data_correct_format))
+          })

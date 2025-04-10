@@ -48,7 +48,7 @@ get_summary <- function(dataset = "the dataset to clean") {
   }
 
   # Select only numeric columns
-  numeric_cols <- dataset |> dplyr::select(where(is.numeric))
+  numeric_cols <- dataset |> dplyr::select(tidyselect::where(is.numeric))
 
   # Check if there are no numeric columns
   if (ncol(numeric_cols) == 0) {
@@ -61,8 +61,8 @@ get_summary <- function(dataset = "the dataset to clean") {
     dplyr::group_by(variable) |>
     dplyr::summarize(
       mean = round(mean(values, na.rm = TRUE), 4),
-      median = round(median(values, na.rm = TRUE), 4),
-      variance = round(var(values, na.rm = TRUE), 4),
+      median = round(stats::median(values, na.rm = TRUE), 4),
+      variance = round(stats::var(values, na.rm = TRUE), 4),
       minimum = round(min(values, na.rm = TRUE), 4),
       maximum = round(max(values, na.rm = TRUE), 4)
     )
