@@ -4,6 +4,8 @@
 # abalone.analysis
 
 <!-- badges: start -->
+
+[![codecov](https://codecov.io/gh/emmaw20/abalone.analysis/branch/main/graph/badge.svg)](https://codecov.io/gh/emmaw20/abalone.analysis)
 <!-- badges: end -->
 
 The goal of abalone.analysis is to …

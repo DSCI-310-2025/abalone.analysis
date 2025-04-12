@@ -1,5 +1,8 @@
 ---
 output: github_document
+params: 
+  github_user: emmaw20
+  github_repo: abalone.analysis
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -16,6 +19,7 @@ knitr::opts_chunk$set(
 # abalone.analysis
 
 <!-- badges: start -->
+[![codecov](https://codecov.io/gh/`r params$github_user`/`r params$github_repo`/branch/main/graph/badge.svg)](https://codecov.io/gh/`r params$github_user`/`r params$github_repo`)
 <!-- badges: end -->
 
 The goal of abalone.analysis is to ...
