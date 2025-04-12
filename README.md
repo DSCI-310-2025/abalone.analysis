@@ -7,11 +7,21 @@
 
 [![codecov](https://codecov.io/gh/emmaw20/abalone.analysis/branch/main/graph/badge.svg)](https://codecov.io/gh/emmaw20/abalone.analysis)
 [![R-CMD-check](https://github.com/DSCI-310-2025/abalone.analysis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2025/abalone.analysis/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/DSCI-310-2025/abalone.analysis/graph/badge.svg)](https://app.codecov.io/gh/DSCI-310-2025/abalone.analysis)
 <!-- badges: end -->
 
-The goal of abalone.analysis is to …
+The goal of abalone.analysis is to provide tools for downloading,
+cleaning, and analyzing the Abalone dataset. This package includes
+functions to:
+
+- Download and preprocess the Abalone dataset from the UCI Machine
+  Learning Repository.
+- Clean the dataset by reversing scaling, creating a new target variable
+  (`age`), and removing unnecessary columns.
+- Split the data into training and testing sets for machine learning
+  workflows.
+
+This package is designed to streamline the process of preparing the
+Abalone dataset for analysis and modeling.
 
 ## Installation
 
@@ -23,35 +33,31 @@ You can install the development version of abalone.analysis from
 pak::pak("DSCI-310-2025/abalone.analysis")
 ```
 
-## Example
+### Where This Package Fits in the R Ecosystem
 
-This is a basic example which shows you how to solve a common problem:
+The `abalone.analysis` package is designed specifically for working with
+the Abalone dataset, providing a streamlined workflow for data
+preprocessing and preparation. While there are many general-purpose data
+manipulation and machine learning packages in R, such as `dplyr`,
+`tidyr`, and `caret`, this package focuses on simplifying the process
+for this specific dataset.
 
-``` r
-library(abalone.analysis)
-## basic example code
-```
+Similar Packages - `dplyr` and `tidyr`: These packages are excellent for
+general-purpose data manipulation and cleaning. However, they require
+users to write custom code for tasks like reversing scaling or creating
+new target variables. `abalone.analysis` provides these functionalities
+out of the box for the Abalone dataset. - `caret` and `tidymodels`:
+These packages are widely used for machine learning workflows, including
+data splitting and model training. While `abalone.analysis`- does not
+replace these packages, it complements them by preparing the Abalone
+dataset specifically for use in such workflows.
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+How `abalone.analysis` Differs: The key difference is that
+abalone.analysis is purpose-built for the Abalone dataset, offering a
+tailored set of tools to handle common preprocessing tasks. This reduces
+the need for users to write repetitive code and ensures consistency in
+data preparation, making it easier to focus on analysis and modeling.
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+By combining dataset-specific preprocessing with compatibility for
+broader R workflows, `abalone.analysis` fills a niche for users working
+with the Abalone dataset in R.
