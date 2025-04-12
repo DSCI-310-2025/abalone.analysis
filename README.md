@@ -6,6 +6,9 @@
 <!-- badges: start -->
 
 [![codecov](https://codecov.io/gh/emmaw20/abalone.analysis/branch/main/graph/badge.svg)](https://codecov.io/gh/emmaw20/abalone.analysis)
+[![R-CMD-check](https://github.com/DSCI-310-2025/abalone.analysis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2025/abalone.analysis/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/DSCI-310-2025/abalone.analysis/graph/badge.svg)](https://app.codecov.io/gh/DSCI-310-2025/abalone.analysis)
 <!-- badges: end -->
 
 The goal of abalone.analysis is to …
