@@ -33,8 +33,8 @@
 #'                         maximum = c(20, 0.8, 0.08,  0.4))
 #' get_summary(x)
 
-
 get_summary <- function(dataset = "the dataset to clean") {
+
   # Check if the data frame is empty
   if (nrow(dataset) == 0) {
     return(tibble::tibble(

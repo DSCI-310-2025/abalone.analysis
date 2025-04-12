@@ -2,7 +2,6 @@
 #' creating a new age target variable, (age = rings + 1.5)
 #' removing the old target variable (rings)
 #' and removing an unnecessary categorical variable (sex).
-
 #' @param data_frame Abalone dataframe with scaled values and the following columns:
 #'                  sex, length, diameter, height, whole_weight, shucked_weight, shell_weight, rings
 #'
