@@ -67,9 +67,9 @@ split_data <- function(clean_data = "data that has already been passed through t
   set.seed(1234)
   abalone_split <- rsample::initial_split(clean_data, prop = 0.7, strata = age)
 
-  # assigning to variables in global environment
-  abalone_train <<- rsample::training(abalone_split)
-  abalone_test <<- rsample::testing(abalone_split)
+  # assigning to variables
+  abalone_train <- rsample::training(abalone_split)
+  abalone_test <- rsample::testing(abalone_split)
 
   return(list(train = abalone_train, test = abalone_test))
 }
